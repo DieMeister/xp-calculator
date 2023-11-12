@@ -71,10 +71,10 @@ while variables.run:
 
                                 else:
                                     print("your value for /fish is not a possible value, please try again")
-                                else:
-                                print("your value for /roll is not a possible value, please try again")
-                            else:
-                                print("your value for /loot is not a possible value, please try again")
+                        else:
+                            print("your value for /roll is not a possible value, please try again")
+                else:
+                    print("your value for /loot is not a possible value, please try again")
 
             else:
                 print("at least one input is not a possible value, please try again")
