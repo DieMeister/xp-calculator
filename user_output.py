@@ -132,10 +132,11 @@ percentage of all combined = 450: {variables.values_data["average"]["times"]["al
 
 def average_amount():
     print(f'''average of each category
-average amount of /loot: {variables.values_data["average"]["amount"]["loot"]}
-average amount of /roll: {variables.values_data["average"]["amount"]["roll"]}
-average amount of /fish: {variables.values_data["average"]["amount"]["fish"]}
-average amount in total: {variables.values_data["average"]["amount"]["all"]}
+average amount of /loot:   {variables.values_data["average"]["amount"]["loot"]}
+average amount of /roll:   {variables.values_data["average"]["amount"]["roll"]}
+average amount of /fish:   {variables.values_data["average"]["amount"]["fish"]}
+average amount in total:   {variables.values_data["average"]["amount"]["all"]}
+average amount of all / 3: {variables.values_data["average"]["amount"]["all/3"]}
 ''')
 
 
