@@ -1,6 +1,7 @@
 {
     "total": {
         "times": {
+            "reset": 1,
             "played": 0,
             "loot": {
                 "0": 0,

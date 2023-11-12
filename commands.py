@@ -69,6 +69,16 @@ def times_played():
 
 def reset():
     if input("are you sure you want to reset all values? if so please write yes") == "yes":
+
+        times_reset = variables.values_data["total"]["times"]["reset"]
+
+        raw_data_before = json.dumps(variables.values_data, indent=4)
+        with open(f"values_save{times_reset}.json", "w") as file:
+            file.write(raw_data_before)
+
+        times_reset += 1
+        variables.values_data["total"]["times"]["reset"] = times_reset
+
         variables.values_data["total"]["times"]["played"] = 0
 
         variables.values_data["total"]["times"]["loot"]["0"] = 0
@@ -168,11 +178,12 @@ def reset():
         variables.values_data["average"]["amount"]["roll"] = 0
         variables.values_data["average"]["amount"]["fish"] = 0
         variables.values_data["average"]["amount"]["all"] = 0
+        variables.values_data["average"]["amount"]["all/3"] = 0
 
         variables.run = False
-        raw_data = json.dumps(variables.values_data, indent=4)
+        raw_data_before = json.dumps(variables.values_data, indent=4)
         with open("values.json", "w") as values_file:
-            values_file.write(raw_data)
+            values_file.write(raw_data_before)
     else:
         print("the reset process was successfully canceled")
 
