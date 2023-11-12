@@ -6,6 +6,9 @@ import counting
 import save_file
 
 possible_values = [0, 25, 50, 75, 100, 125, 150]
+possible_value_loot = False
+possible_value_roll = False
+possible_value_fish = False
 
 print("\n\nwelcome to xp_analysis. these are all commands you can use:")
 commands.info()
@@ -50,10 +53,14 @@ while variables.run:
 
             for i in possible_values:
                 if i == variables.amount_loot_now:
+                    possible_value_loot = True
                     for i in possible_values:
                         if i == variables.amount_roll_now:
+                            possible_value_roll = True
                             for i in possible_values:
                                 if i == variables.amount_fish_now:
+                                    possible_value_fish = True
+
                                     counting.times_loot()
                                     counting.times_roll()
                                     counting.times_fish()
@@ -68,16 +75,12 @@ while variables.run:
                                     calculating.average_amount()
 
                                     save_file.save()
-
-                                else:
-                                    print("your value for /fish is not a possible value, please try again")
-                        else:
-                            print("your value for /roll is not a possible value, please try again")
-                else:
-                    print("your value for /loot is not a possible value, please try again")
-
-            else:
-                print("at least one input is not a possible value, please try again")
+            if not possible_value_loot:
+                print("your value for /loot is not a possible value, please try again")
+            if not possible_value_roll:
+                print("your value for /roll is not a possible value, please try again")
+            if not possible_value_fish:
+                print("your value for /fish is not a possible value, please try again")
 
         except ValueError:
             print("at least one value is not a number, please try again")
