@@ -65,3 +65,4 @@ def average_amount():
     variables.values_data["average"]["amount"]["roll"] = variables.values_data["total"]["amount"]["roll"] / variables.values_data["total"]["times"]["played"]
     variables.values_data["average"]["amount"]["fish"] = variables.values_data["total"]["amount"]["fish"] / variables.values_data["total"]["times"]["played"]
     variables.values_data["average"]["amount"]["all"] = variables.values_data["total"]["amount"]["all"] / variables.values_data["total"]["times"]["played"]
+    variables.values_data["average"]["amount"]["all/3"] = variables.values_data["average"]["amount"]["all"] / 3
