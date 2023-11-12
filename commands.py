@@ -176,6 +176,7 @@ def reset():
     else:
         print("the reset process was successfully canceled")
 
+
 def info():
     print(f'''
 loot = total_times_loot; average_times_loot
