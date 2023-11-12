@@ -54,25 +54,27 @@ while variables.run:
                         if i == variables.amount_roll_now:
                             for i in possible_values:
                                 if i == variables.amount_fish_now:
+                                    counting.times_loot()
+                                    counting.times_roll()
+                                    counting.times_fish()
+                                    counting.times_all()
+                                    counting.times_played()
 
-                                    possible_value = True
+                                    calculating.total_amount()
+                                    calculating.average_times_loot()
+                                    calculating.average_times_roll()
+                                    calculating.average_times_fish()
+                                    calculating.average_times_all()
+                                    calculating.average_amount()
 
-            if possible_value:
+                                    save_file.save()
 
-                counting.times_loot()
-                counting.times_roll()
-                counting.times_fish()
-                counting.times_all()
-                counting.times_played()
-
-                calculating.total_amount()
-                calculating.average_times_loot()
-                calculating.average_times_roll()
-                calculating.average_times_fish()
-                calculating.average_times_all()
-                calculating.average_amount()
-
-                save_file.save()
+                                else:
+                                    print("your value for /fish is not a possible value, please try again")
+                                else:
+                                print("your value for /roll is not a possible value, please try again")
+                            else:
+                                print("your value for /loot is not a possible value, please try again")
 
             else:
                 print("at least one input is not a possible value, please try again")
