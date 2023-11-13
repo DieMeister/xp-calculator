@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5786d33-b90e-4f55-9432-d2c33a8f8164" name="Changes" comment="deleting unimportant imports">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/saves.txt" beforeDir="false" afterPath="$PROJECT_DIR$/saves.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/values.json" beforeDir="false" afterPath="$PROJECT_DIR$/values.json" afterDir="false" />
     </list>
@@ -21,18 +22,24 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;history&quot;: [
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "history": [
     {
-      &quot;state&quot;: &quot;CLOSED&quot;,
-      &quot;assignee&quot;: &quot;DieMeister&quot;
+      "state": "CLOSED",
+      "assignee": "DieMeister"
+    },
+    {
+      "state": "OPEN",
+      "reviewState": "CHANGES_REQUESTED"
+    },
+    {
+      "state": "OPEN"
     }
   ],
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;CLOSED&quot;,
-    &quot;assignee&quot;: &quot;DieMeister&quot;
+  "lastFilter": {
+    "state": "OPEN"
   }
-}</component>
+}]]></component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -110,7 +117,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699908256969</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="deleting unimportant imports">
+      <option name="closed" value="true" />
+      <created>1699913422940</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1699913422940</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
