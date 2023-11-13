@@ -1,4 +1,3 @@
-import user_input
 import json
 
 ask_input = False
