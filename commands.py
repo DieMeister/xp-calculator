@@ -1,6 +1,7 @@
 import user_output
 import variables
 import json
+import os
 
 
 def stop():
@@ -68,13 +69,23 @@ def times_played():
 
 
 def reset():
-    if input("are you sure you want to reset all values? if so please write yes") == "yes":
+    if input('are you sure you want to reset all values? if so please write "yes": ') == "yes":
 
         times_reset = variables.values_data["total"]["times"]["reset"]
 
+        os.mkdir(f"saves/reset_{times_reset}")
+
         raw_data_before = json.dumps(variables.values_data, indent=4)
-        with open(f"values_save{times_reset}.json", "w") as file:
+        with open(f"saves/reset_{times_reset}/values.json", "w") as file:
             file.write(raw_data_before)
+
+        with open("saves.txt", "r") as saves_old:
+            saves_old.seek(0)
+            lines = saves_old.read()
+            with open(f"saves/reset_{times_reset}/saves.txt", "w") as saves_new:
+                saves_new.write(lines)
+        with open("saves.txt", "w") as saves_old:
+            saves_old.write("")
 
         times_reset += 1
         variables.values_data["total"]["times"]["reset"] = times_reset
