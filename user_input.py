@@ -1,18 +1,18 @@
-def commands(command):
+def commands():
     command = input('do you want to use a command? if not type anything but a command"')
-    return(command)
+    return command
 
 
-def loot_now(amount):
+def loot_now():
     amount = input("what is the amount of xp you got by using /loot?")
-    return(amount)
+    return amount
 
 
-def roll_now(amount):
+def roll_now():
     amount = input("what is the amount of xp you got by using /roll?")
-    return(amount)
+    return amount
 
 
-def fish_now(amount):
+def fish_now():
     amount = input("what is the amount of xp you got by using /fish?")
-    return(amount)
+    return amount

@@ -1,3 +1,4 @@
+import calculating
 import user_output
 import variables
 import json
@@ -72,6 +73,7 @@ def reset():
     if input('are you sure you want to reset all values? if so please write "yes": ') == "yes":
 
         times_reset = variables.values_data["total"]["times"]["reset"]
+        times_reset += 1
 
         os.mkdir(f"saves/reset_{times_reset}")
 
@@ -87,109 +89,36 @@ def reset():
         with open("saves.txt", "w") as saves_old:
             saves_old.write("")
 
-        times_reset += 1
         variables.values_data["total"]["times"]["reset"] = times_reset
 
+        for i in variables.values_data["total"]["times"]["loot"].keys():
+            variables.values_data["total"]["times"]["loot"][i] = 0
+
+        for i in variables.values_data["total"]["times"]["roll"].keys():
+            variables.values_data["total"]["times"]["roll"][i] = 0
+
+        for i in variables.values_data["total"]["times"]["fish"].keys():
+            variables.values_data["total"]["times"]["fish"][i] = 0
+
+        for i in variables.values_data["total"]["times"]["all"].keys():
+            variables.values_data["total"]["times"]["all"][i] = 0
+
+        for i in variables.values_data["total"]["amount"].keys():
+            variables.values_data["total"]["amount"][i] = 0
+
+        for i in variables.values_data["total"]["times"]["combination"]["order_important"].keys():
+            variables.values_data["total"]["times"]["combination"]["order_important"][i] = 0
+
+        calculating.average_times_loot()
+        calculating.average_times_roll()
+        calculating.average_times_fish()
+        calculating.average_times_all()
+        calculating.average_amount()
+        calculating.total_times_combination()
+        calculating.average_times_combination_important()
+        calculating.average_times_combination_unimportant()
+
         variables.values_data["total"]["times"]["played"] = 0
-
-        variables.values_data["total"]["times"]["loot"]["0"] = 0
-        variables.values_data["total"]["times"]["loot"]["25"] = 0
-        variables.values_data["total"]["times"]["loot"]["50"] = 0
-        variables.values_data["total"]["times"]["loot"]["75"] = 0
-        variables.values_data["total"]["times"]["loot"]["100"] = 0
-        variables.values_data["total"]["times"]["loot"]["125"] = 0
-        variables.values_data["total"]["times"]["loot"]["150"] = 0
-
-        variables.values_data["total"]["times"]["roll"]["0"] = 0
-        variables.values_data["total"]["times"]["roll"]["25"] = 0
-        variables.values_data["total"]["times"]["roll"]["50"] = 0
-        variables.values_data["total"]["times"]["roll"]["75"] = 0
-        variables.values_data["total"]["times"]["roll"]["100"] = 0
-        variables.values_data["total"]["times"]["roll"]["125"] = 0
-        variables.values_data["total"]["times"]["roll"]["150"] = 0
-
-        variables.values_data["total"]["times"]["fish"]["0"] = 0
-        variables.values_data["total"]["times"]["fish"]["25"] = 0
-        variables.values_data["total"]["times"]["fish"]["50"] = 0
-        variables.values_data["total"]["times"]["fish"]["75"] = 0
-        variables.values_data["total"]["times"]["fish"]["100"] = 0
-        variables.values_data["total"]["times"]["fish"]["125"] = 0
-        variables.values_data["total"]["times"]["fish"]["150"] = 0
-
-        variables.values_data["total"]["times"]["all"]["0"] = 0
-        variables.values_data["total"]["times"]["all"]["25"] = 0
-        variables.values_data["total"]["times"]["all"]["50"] = 0
-        variables.values_data["total"]["times"]["all"]["75"] = 0
-        variables.values_data["total"]["times"]["all"]["100"] = 0
-        variables.values_data["total"]["times"]["all"]["125"] = 0
-        variables.values_data["total"]["times"]["all"]["150"] = 0
-        variables.values_data["total"]["times"]["all"]["175"] = 0
-        variables.values_data["total"]["times"]["all"]["200"] = 0
-        variables.values_data["total"]["times"]["all"]["225"] = 0
-        variables.values_data["total"]["times"]["all"]["250"] = 0
-        variables.values_data["total"]["times"]["all"]["275"] = 0
-        variables.values_data["total"]["times"]["all"]["300"] = 0
-        variables.values_data["total"]["times"]["all"]["325"] = 0
-        variables.values_data["total"]["times"]["all"]["350"] = 0
-        variables.values_data["total"]["times"]["all"]["375"] = 0
-        variables.values_data["total"]["times"]["all"]["400"] = 0
-        variables.values_data["total"]["times"]["all"]["425"] = 0
-        variables.values_data["total"]["times"]["all"]["450"] = 0
-
-        variables.values_data["total"]["amount"]["loot"] = 0
-        variables.values_data["total"]["amount"]["roll"] = 0
-        variables.values_data["total"]["amount"]["fish"] = 0
-        variables.values_data["total"]["amount"]["all"] = 0
-
-        variables.values_data["average"]["times"]["loot"]["0"] = 0
-        variables.values_data["average"]["times"]["loot"]["25"] = 0
-        variables.values_data["average"]["times"]["loot"]["50"] = 0
-        variables.values_data["average"]["times"]["loot"]["75"] = 0
-        variables.values_data["average"]["times"]["loot"]["100"] = 0
-        variables.values_data["average"]["times"]["loot"]["125"] = 0
-        variables.values_data["average"]["times"]["loot"]["150"] = 0
-
-        variables.values_data["average"]["times"]["roll"]["0"] = 0
-        variables.values_data["average"]["times"]["roll"]["25"] = 0
-        variables.values_data["average"]["times"]["roll"]["50"] = 0
-        variables.values_data["average"]["times"]["roll"]["75"] = 0
-        variables.values_data["average"]["times"]["roll"]["100"] = 0
-        variables.values_data["average"]["times"]["roll"]["125"] = 0
-        variables.values_data["average"]["times"]["roll"]["150"] = 0
-
-        variables.values_data["average"]["times"]["fish"]["0"] = 0
-        variables.values_data["average"]["times"]["fish"]["25"] = 0
-        variables.values_data["average"]["times"]["fish"]["50"] = 0
-        variables.values_data["average"]["times"]["fish"]["75"] = 0
-        variables.values_data["average"]["times"]["fish"]["100"] = 0
-        variables.values_data["average"]["times"]["fish"]["125"] = 0
-        variables.values_data["average"]["times"]["fish"]["150"] = 0
-
-        variables.values_data["average"]["times"]["all"]["0"] = 0
-        variables.values_data["average"]["times"]["all"]["25"] = 0
-        variables.values_data["average"]["times"]["all"]["50"] = 0
-        variables.values_data["average"]["times"]["all"]["75"] = 0
-        variables.values_data["average"]["times"]["all"]["100"] = 0
-        variables.values_data["average"]["times"]["all"]["125"] = 0
-        variables.values_data["average"]["times"]["all"]["150"] = 0
-        variables.values_data["average"]["times"]["all"]["175"] = 0
-        variables.values_data["average"]["times"]["all"]["200"] = 0
-        variables.values_data["average"]["times"]["all"]["225"] = 0
-        variables.values_data["average"]["times"]["all"]["250"] = 0
-        variables.values_data["average"]["times"]["all"]["275"] = 0
-        variables.values_data["average"]["times"]["all"]["300"] = 0
-        variables.values_data["average"]["times"]["all"]["325"] = 0
-        variables.values_data["average"]["times"]["all"]["350"] = 0
-        variables.values_data["average"]["times"]["all"]["375"] = 0
-        variables.values_data["average"]["times"]["all"]["400"] = 0
-        variables.values_data["average"]["times"]["all"]["425"] = 0
-        variables.values_data["average"]["times"]["all"]["450"] = 0
-
-        variables.values_data["average"]["amount"]["loot"] = 0
-        variables.values_data["average"]["amount"]["roll"] = 0
-        variables.values_data["average"]["amount"]["fish"] = 0
-        variables.values_data["average"]["amount"]["all"] = 0
-        variables.values_data["average"]["amount"]["all/3"] = 0
 
         variables.run = False
         raw_data_before = json.dumps(variables.values_data, indent=4)
